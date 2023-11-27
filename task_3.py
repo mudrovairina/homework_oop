@@ -1,7 +1,9 @@
 class AvgGrade:
     def avg_grade(self):
+        all_grades = []
         for course, grades in self.grades.items():
-            return sum(grades)/len(grades)
+            all_grades += grades
+        return round((sum(all_grades) / len(all_grades)), 1)
 
     def __ge__(self, other):
         return self.avg_grade() >= other.avg_grade()
